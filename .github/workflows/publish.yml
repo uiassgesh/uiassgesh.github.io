@@ -1,3 +1,5 @@
+name: Publish Snow Gesh
+
 on:
   push:
     branches: [main]
@@ -19,28 +21,38 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     timeout-minutes: 30
+
     steps:
       - uses: actions/checkout@v4
+
       - name: Download website
         run: |
-          curl --retry 3 -fsSL --max-time 1500 https://filebin.net/snow-gesh/snow-gesh-site.tar.gz -o /tmp/site.tar.gz
-          echo "3aa9ab40468d8954c42fc2590c224fa56b0691f3e6d5edac8a53055fcae9d086  /tmp/site.tar.gz" | sha256sum -c -
+          curl --retry 3 -fsSL --max-time 1500 https://filebin.net/snow-gesh-v21-fixed/snow-gesh-v21-fixed.tar.gz -o /tmp/site.tar.gz
+          echo "63aa8fc0d25f53cadcfd0264cea126747794bc1c0162789f62dc53ed1af790c1  /tmp/site.tar.gz" | sha256sum -c -
           tar -xzf /tmp/site.tar.gz
+
       - name: Save website
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add .
-          git commit -m "Publish Snow Gesh V21"
-          git push
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish Snow Gesh V21"
+            git push
+          fi
+
       - uses: actions/configure-pages@v5
+
       - name: Prepare website
         run: |
+          rm -rf site
           mkdir site
           cp -r index.html assets media icon-192.png icon-512.png manifest.webmanifest sw.js .nojekyll site/
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site
+
       - id: deployment
         uses: actions/deploy-pages@v4
-          
+        
