@@ -28,7 +28,8 @@ jobs:
       - name: Download website
         run: |
           curl --retry 3 -fsSL --max-time 1500 https://filebin.net/snow-gesh-v21-fixed/snow-gesh-v21-fixed.tar.gz -o /tmp/site.tar.gz
-          echo "63aa8fc0d25f53cadcfd0264cea126747794bc1c0162789f62dc53ed1af790c1  /tmp/site.tar.gz" | sha256sum -c -
+          curl --retry 3 -fsSL --max-time 60 https://filebin.net/snow-gesh-v21-fixed/site.sha256 -o /tmp/site.sha256
+          sha256sum -c /tmp/site.sha256
           tar -xzf /tmp/site.tar.gz
 
       - name: Save website
@@ -37,7 +38,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add .
           if ! git diff --cached --quiet; then
-            git commit -m "Publish Snow Gesh V21"
+            git commit -m "Publish Snow Gesh V22"
             git push
           fi
 
