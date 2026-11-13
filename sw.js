@@ -1,6 +1,9 @@
-const CACHE = 'snow-gesh-v5-github-pages'
+const CACHE = 'snow-gesh-v6-github-pages'
 self.addEventListener('install', event => { self.skipWaiting(); event.waitUntil(caches.open(CACHE)) })
-self.addEventListener('activate', event => event.waitUntil(self.clients.claim()))
+self.addEventListener('activate', event => event.waitUntil(Promise.all([
+  self.clients.claim(),
+  caches.keys().then(keys => Promise.all(keys.filter(key => key !== CACHE).map(key => caches.delete(key))))
+])))
 self.addEventListener('fetch', event => {
   const request = event.request
   if (request.method !== 'GET') return
