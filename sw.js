@@ -1,4 +1,4 @@
-const CACHE = 'snow-gesh-v37-github-pages'
+const CACHE = 'snow-gesh-v38-github-pages'
 self.addEventListener('install', event => { self.skipWaiting(); event.waitUntil(caches.open(CACHE)) })
 self.addEventListener('activate', event => event.waitUntil(Promise.all([
   self.clients.claim(),
