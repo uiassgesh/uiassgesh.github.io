@@ -9,7 +9,7 @@ self.addEventListener('fetch', event => {
   if (request.method !== 'GET') return
   const url = new URL(request.url)
   if (request.mode === 'navigate') { event.respondWith(fetch(request)); return }
-  if (url.origin === location.origin && /\/(media|assets)\//.test(url.pathname)) {
+  if (url.origin === location.origin && /\/(media|assets|models)\//.test(url.pathname)) {
     event.respondWith(caches.match(request).then(cached => cached || fetch(request).then(response => {
       if (response.ok) event.waitUntil(caches.open(CACHE).then(cache => cache.put(request, response.clone())))
       return response
