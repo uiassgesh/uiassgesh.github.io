@@ -1,0 +1,5 @@
+Snow Gesh V65
+Published: 2026-11-20
+Archive: snow-gesh-v21-fixed.tar.gz
+SHA256: d27444118cd491a5b264f28945fc1d1b72a6e12b7db9023bc9c0464ce3b978e7
+Changes: profile materials, background moderation, explicit file actions and cancel.
