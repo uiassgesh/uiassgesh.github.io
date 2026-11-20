@@ -1,7 +1,8 @@
-const CACHE = 'snow-gesh-v61-github-pages'
+const CACHE = 'snow-gesh-v62-github-pages'
 const SHELL = ['./', './index.html', './offline.html', './manifest.webmanifest']
 const MEDIA = [
   './media/sheregesh-chairlift-base.jpg',
+  './media/chairlift-chair.svg',
   './logo-mark.png',
   './icon-192.png',
   './media/rider.jpg',
