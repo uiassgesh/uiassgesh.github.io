@@ -1,0 +1,5 @@
+Snow Gesh V66
+Published: 2026-11-20
+Archive: snow-gesh-v21-fixed.tar.gz
+SHA256: 0e1c07fc3fea96285b7c5208af593db29883bd3abf0cde2df371ec5f52eeb7a1
+Changes: automatic approval without violations, manual review only for detected violations, clear material filter buttons.
