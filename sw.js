@@ -1,4 +1,4 @@
-const CACHE = 'snow-gesh-v57-github-pages'
+const CACHE = 'snow-gesh-v58-github-pages'
 const SHELL = ['./', './index.html', './offline.html', './manifest.webmanifest']
 self.addEventListener('install', event => { event.waitUntil((async () => { const cache = await caches.open(CACHE); await cache.addAll(SHELL); const response = await fetch('./index.html'); const html = await response.clone().text(); await cache.put('./index.html', response); const assets = [...html.matchAll(/(?:src|href)="([^"]+)"/g)].map(match => match[1]).filter(path => /^(?:\.?\/)?assets\//.test(path)); if (assets.length) await cache.addAll(assets) })()) })
 self.addEventListener('message', event => { if (event.data?.type === 'SKIP_WAITING') self.skipWaiting() })
