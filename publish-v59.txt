@@ -1,0 +1,5 @@
+Snow Gesh V59
+Archive: snow-gesh-v21-fixed.tar.gz
+SHA-256: 795bd020398785996cecef0dd1faa379d07723cb587b3431818077e73776efac
+Built and tested: 2026-11-20
+Fixes: photos and resilient offline shell, fullscreen Shorts and recovery, owner/admin/moderator staff entry.
