@@ -1,0 +1,4 @@
+V71
+archive: snow-gesh-v21-fixed.tar.gz
+sha256: b93b25b5aa7d24b7a68271d67b9f8bebd0969d681c0b27216fb019bc9d17ff95
+js: assets/index-DEsYoLS6.js
