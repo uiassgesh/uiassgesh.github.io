@@ -1,4 +1,4 @@
-const CACHE = 'snow-gesh-v72-github-pages'
+const CACHE = 'snow-gesh-v73-github-pages'
 const SHELL = ['./', './index.html', './offline.html', './manifest.webmanifest']
 const MEDIA = [
   './media/sheregesh-static-ice-morning.webp',
