@@ -39,6 +39,7 @@ jobs:
         run: |
           rm -rf site
           mkdir site
+          touch .nojekyll
           cp -r index.html assets images fonts media icon-192.png icon-512.png favicon.svg manifest.webmanifest sw.js .nojekyll site/
       - uses: actions/upload-pages-artifact@v3
         with:
