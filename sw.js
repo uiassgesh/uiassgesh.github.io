@@ -1,5 +1,5 @@
-const CACHE = "snow-gesh-v74-static";
-const PAGES = "snow-gesh-v74-pages";
+const CACHE = "snow-gesh-v76-static";
+const PAGES = "snow-gesh-v76-pages";
 self.addEventListener("install", (event) => {
   event.waitUntil(caches.open(PAGES).then((cache) => cache.add("/")).then(() => self.skipWaiting()));
 });
