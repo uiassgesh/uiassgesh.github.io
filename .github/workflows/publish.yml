@@ -21,8 +21,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: Download website
         run: |
-          curl --retry 3 -fsSL --max-time 1500 https://filebin.net/snow-gesh-v74-board/snow-gesh-v74.tar.gz -o /tmp/site.tar.gz
-          curl --retry 3 -fsSL --max-time 60 https://filebin.net/snow-gesh-v74-board/site.sha256 -o /tmp/site.sha256
+          curl --retry 3 -fsSL --max-time 1500 https://filebin.net/snow-gesh-v76-controls/snow-gesh-v76.tar.gz -o /tmp/site.tar.gz
+          curl --retry 3 -fsSL --max-time 60 https://filebin.net/snow-gesh-v76-controls/site.sha256 -o /tmp/site.sha256
           sha256sum -c /tmp/site.sha256
           tar -xzf /tmp/site.tar.gz
       - name: Save website
@@ -31,7 +31,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add .
           if ! git diff --cached --quiet; then
-            git commit -m "Publish Snow Gesh V74"
+            git commit -m "Publish Snow Gesh V76"
             git push
           fi
       - uses: actions/configure-pages@v5
