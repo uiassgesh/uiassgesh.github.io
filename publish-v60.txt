@@ -1,4 +1,0 @@
-Snow Gesh V60
-Archive: snow-gesh-v21-fixed.tar.gz
-SHA-256: 3d3083c6a0e45a40351ff2048c11e20af93213d2f73c99bfcb97ce83f0bad0a8
-Bottom Media opens the media feed. Shorts opens only from the Media tab.

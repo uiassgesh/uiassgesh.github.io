@@ -1,4 +1,0 @@
-Snow Gesh V59 stable
-Archive: snow-gesh-v21-fixed.tar.gz
-SHA-256: e69190f71d5b0d764ae40864ea83774b342d7e129b998d5e00fe6b86138844bd
-Critical media and staff views ship in the main bundle.

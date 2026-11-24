@@ -1,5 +1,0 @@
-V67
-archive: snow-gesh-v21-fixed.tar.gz
-sha256: 50744dbe0921b2d1280169820c769e2bfaeabb446280bb39cd278003723c2b43
-js: assets/index-cFXBfHrI.js
-checksum-file: fixed

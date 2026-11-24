@@ -1,2 +1,0 @@
-Verified deployment archive and SHA-256 are ready.
-SHA-256: 795bd020398785996cecef0dd1faa379d07723cb587b3431818077e73776efac

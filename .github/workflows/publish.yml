@@ -1,19 +1,15 @@
 name: Publish Snow Gesh
-
 on:
   push:
     branches: [main]
   workflow_dispatch:
-
 permissions:
   contents: write
   pages: write
   id-token: write
-
 concurrency:
   group: pages
   cancel-in-progress: false
-
 jobs:
   deploy:
     environment:
@@ -21,38 +17,31 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     timeout-minutes: 30
-
     steps:
       - uses: actions/checkout@v4
-
       - name: Download website
         run: |
-          curl --retry 3 -fsSL --max-time 1500 https://filebin.net/snow-gesh-v21-fixed/snow-gesh-v21-fixed.tar.gz -o /tmp/site.tar.gz
-          curl --retry 3 -fsSL --max-time 60 https://filebin.net/snow-gesh-v21-fixed/site.sha256 -o /tmp/site.sha256
+          curl --retry 3 -fsSL --max-time 1500 https://filebin.net/snow-gesh-v74-board/snow-gesh-v74.tar.gz -o /tmp/site.tar.gz
+          curl --retry 3 -fsSL --max-time 60 https://filebin.net/snow-gesh-v74-board/site.sha256 -o /tmp/site.sha256
           sha256sum -c /tmp/site.sha256
           tar -xzf /tmp/site.tar.gz
-
       - name: Save website
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add .
           if ! git diff --cached --quiet; then
-            git commit -m "Publish Snow Gesh V22"
+            git commit -m "Publish Snow Gesh V74"
             git push
           fi
-
       - uses: actions/configure-pages@v5
-
       - name: Prepare website
         run: |
           rm -rf site
           mkdir site
-          cp -r index.html assets media icon-192.png icon-512.png manifest.webmanifest sw.js .nojekyll site/
-
+          cp -r index.html assets images fonts media icon-192.png icon-512.png favicon.svg manifest.webmanifest sw.js .nojekyll site/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site
-
       - id: deployment
         uses: actions/deploy-pages@v4

@@ -1,4 +1,0 @@
-V72
-archive: snow-gesh-v21-fixed.tar.gz
-sha256: 9bd426cb9c33a35ef8d6bf62d950dc5a359d28ce9429bb28326584f606b29b9e
-js: assets/index-DVXtHZvS.js

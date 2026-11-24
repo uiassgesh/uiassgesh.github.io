@@ -1,4 +1,0 @@
-V69
-archive: snow-gesh-v21-fixed.tar.gz
-sha256: 506681fc6fe2f65ee75abe55a335f823bda8235632cd22e9cdefa20abcf3afd7
-js: assets/index-Cf7Mcn-V.js
